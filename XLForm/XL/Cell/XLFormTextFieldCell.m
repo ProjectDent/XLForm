@@ -77,6 +77,7 @@
     [super update];
     self.textField.delegate = self;
     self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.textField.returnKeyType = self.rowDescriptor.returnKeyType;
     if ([self.rowDescriptor.rowType isEqualToString:XLFormRowDescriptorTypeText]){
         self.textField.autocorrectionType = UITextAutocorrectionTypeDefault;
         self.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;

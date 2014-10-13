@@ -50,6 +50,7 @@
         _buttonViewControllerPresentationMode = XLFormPresentationModeDefault;
         _cellStype = UITableViewCellStyleValue1;
         _validators = [NSMutableArray new];
+        _returnKeyType = UIReturnKeyDefault;
         
     }
     return self;
@@ -131,6 +132,7 @@
     rowDescriptorCopy.cellConfigAtConfigure = [self.cellConfigAtConfigure mutableCopy];
     rowDescriptorCopy.disabled = self.disabled;
     rowDescriptorCopy.required = self.required;
+    rowDescriptorCopy.returnKeyType = self.returnKeyType;
     
     // =====================
     // properties for Button

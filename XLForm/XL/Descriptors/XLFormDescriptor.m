@@ -283,12 +283,16 @@ NSString * const XLFormErrorDomain = @"XLFormErrorDomain";
         if ([[change objectForKey:NSKeyValueChangeKindKey] isEqualToNumber:@(NSKeyValueChangeInsertion)]){
             NSIndexSet * indexSet = [change objectForKey:NSKeyValueChangeIndexesKey];
             XLFormSectionDescriptor * section = [self.formSections objectAtIndex:indexSet.firstIndex];
-            [self.delegate formSectionHasBeenAdded:section atIndex:indexSet.firstIndex];
+            if ([self.delegate respondsToSelector:@selector(formSectionHasBeenAdded:atIndex:)]) {
+                [self.delegate formSectionHasBeenAdded:section atIndex:indexSet.firstIndex];
+            }
         }
         else if ([[change objectForKey:NSKeyValueChangeKindKey] isEqualToNumber:@(NSKeyValueChangeRemoval)]){
             NSIndexSet * indexSet = [change objectForKey:NSKeyValueChangeIndexesKey];
             XLFormSectionDescriptor * removedSection = [[change objectForKey:NSKeyValueChangeOldKey] objectAtIndex:0];
-            [self.delegate formSectionHasBeenRemoved:removedSection atIndex:indexSet.firstIndex];
+            if ([self.delegate respondsToSelector:@selector(formSectionHasBeenRemoved:atIndex:)]) {
+                [self.delegate formSectionHasBeenRemoved:removedSection atIndex:indexSet.firstIndex];
+            }
         }
     }
     else if ([keyPath isEqualToString:@"formRows"]){
@@ -296,13 +300,17 @@ NSString * const XLFormErrorDomain = @"XLFormErrorDomain";
             NSIndexSet * indexSet = [change objectForKey:NSKeyValueChangeIndexesKey];
             XLFormRowDescriptor * formRow = [((XLFormSectionDescriptor *)object).formRows objectAtIndex:indexSet.firstIndex];
             NSUInteger sectionIndex = [self.formSections indexOfObject:object];
+            if ([self.delegate respondsToSelector:@selector(formRowHasBeenAdded:atIndexPath:)]) {
             [self.delegate formRowHasBeenAdded:formRow atIndexPath:[NSIndexPath indexPathForRow:indexSet.firstIndex inSection:sectionIndex]];
+            }
         }
         else if ([[change objectForKey:NSKeyValueChangeKindKey] isEqualToNumber:@(NSKeyValueChangeRemoval)]){
             NSIndexSet * indexSet = [change objectForKey:NSKeyValueChangeIndexesKey];
             XLFormRowDescriptor * removedRow = [[change objectForKey:NSKeyValueChangeOldKey] objectAtIndex:0];
             NSUInteger sectionIndex = [self.formSections indexOfObject:object];
-            [self.delegate formRowHasBeenRemoved:removedRow atIndexPath:[NSIndexPath indexPathForRow:indexSet.firstIndex inSection:sectionIndex]];
+            if ([self.delegate respondsToSelector:@selector(formRowHasBeenRemoved:atIndexPath:)]) {
+                [self.delegate formRowHasBeenRemoved:removedRow atIndexPath:[NSIndexPath indexPathForRow:indexSet.firstIndex inSection:sectionIndex]];
+            }
         }
         
     }

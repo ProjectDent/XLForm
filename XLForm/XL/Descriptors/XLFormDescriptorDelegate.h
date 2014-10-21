@@ -31,7 +31,7 @@
 
 @protocol XLFormDescriptorDelegate <NSObject>
 
-@required
+@optional
 
 -(void)formSectionHasBeenRemoved:(XLFormSectionDescriptor *)formSection atIndex:(NSUInteger)index;
 -(void)formSectionHasBeenAdded:(XLFormSectionDescriptor *)formSection atIndex:(NSUInteger)index;

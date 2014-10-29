@@ -251,10 +251,6 @@
     [self.tableView insertSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:[self insertRowAnimationForSection:formSection]];
 }
 
--(void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue
-{
-}
-
 #pragma mark - XLFormViewControllerDelegate
 
 -(NSDictionary *)formValues

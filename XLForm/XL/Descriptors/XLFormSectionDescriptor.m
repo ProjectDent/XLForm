@@ -139,8 +139,10 @@
         if ([[change objectForKey:NSKeyValueChangeKindKey] isEqualToNumber:@(NSKeyValueChangeSetting)]){
             id newValue = [change objectForKey:NSKeyValueChangeNewKey];
             id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+            if (newValue != oldValue) {
             if ([self.formDescriptor.delegate respondsToSelector:@selector(formRowDescriptorValueHasChanged:oldValue:newValue:)]) {
                 [self.formDescriptor.delegate formRowDescriptorValueHasChanged:object oldValue:oldValue newValue:newValue];
+            }
             }
         }
     }

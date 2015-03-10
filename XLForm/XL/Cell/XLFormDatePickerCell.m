@@ -50,6 +50,7 @@
 -(void)configure
 {
     [super configure];
+    [self.datePicker addTarget:self action:@selector(datePickerValueUpdated) forControlEvents:UIControlEventValueChanged];
     [self.contentView addSubview:self.datePicker];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.datePicker attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
 }
@@ -57,6 +58,10 @@
 -(void)update
 {
     [super update];
+}
+
+- (void)datePickerValueUpdated {
+    self.rowDescriptor.value = self.datePicker.date;
 }
 
 

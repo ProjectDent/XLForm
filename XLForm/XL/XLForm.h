@@ -92,6 +92,7 @@ extern NSString *const XLFormRowDescriptorTypeSelectorSegmentedControl;
 extern NSString *const XLFormRowDescriptorTypeDateInline;
 extern NSString *const XLFormRowDescriptorTypeDateTimeInline;
 extern NSString *const XLFormRowDescriptorTypeTimeInline;
+extern NSString *const XLFormRowDescriptorTypeDateInlineConsistent;
 extern NSString *const XLFormRowDescriptorTypeDate;
 extern NSString *const XLFormRowDescriptorTypeDateTime;
 extern NSString *const XLFormRowDescriptorTypeTime;

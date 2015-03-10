@@ -51,6 +51,7 @@ NSString *const XLFormRowDescriptorTypeSelectorSegmentedControl = @"selectorSegm
 NSString *const XLFormRowDescriptorTypeDateInline = @"dateInline";
 NSString *const XLFormRowDescriptorTypeDateTimeInline = @"datetimeInline";
 NSString *const XLFormRowDescriptorTypeTimeInline = @"timeInline";
+NSString *const XLFormRowDescriptorTypeDateInlineConsistent = @"dateInlineConsistent";
 NSString *const XLFormRowDescriptorTypeDate = @"date";
 NSString *const XLFormRowDescriptorTypeDateTime = @"datetime";
 NSString *const XLFormRowDescriptorTypeTime = @"time";

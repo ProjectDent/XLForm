@@ -200,6 +200,7 @@
                                                XLFormRowDescriptorTypeDateInline: [XLFormDateCell class],
                                                XLFormRowDescriptorTypeTimeInline: [XLFormDateCell class],
                                                XLFormRowDescriptorTypeDateTimeInline: [XLFormDateCell class],
+                                               XLFormRowDescriptorTypeDateInlineConsistent: [XLFormDatePickerCell class],
                                                XLFormRowDescriptorTypeDatePicker : [XLFormDatePickerCell class],
                                                XLFormRowDescriptorTypePicker : [XLFormPickerCell class],
 											   XLFormRowDescriptorTypeSlider : [XLFormSliderCell class],

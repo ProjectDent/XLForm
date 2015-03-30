@@ -165,6 +165,11 @@
         }
         else{
             Class selectorClass = self.rowDescriptor.selectorControllerClass;
+            
+            if (selectorClass == nil) {
+                return;
+            }
+            
             UIViewController<XLFormRowDescriptorViewController> *selectorViewController = [[selectorClass alloc] init];
             selectorViewController.rowDescriptor = self.rowDescriptor;
             selectorViewController.title = self.rowDescriptor.selectorTitle;

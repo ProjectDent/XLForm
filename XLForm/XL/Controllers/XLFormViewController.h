@@ -43,6 +43,8 @@
 -(void)deselectFormRow:(XLFormRowDescriptor *)formRow;
 -(void)reloadFormRow:(XLFormRowDescriptor *)formRow;
 
+- (void)didSelectFooterInSection:(NSInteger)section;
+
 -(NSDictionary *)formValues;
 -(NSDictionary *)httpParameters;
 

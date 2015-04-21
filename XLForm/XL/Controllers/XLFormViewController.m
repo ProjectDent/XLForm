@@ -28,6 +28,7 @@
 #import "XLFormViewController.h"
 #import "UIView+XLFormAdditions.h"
 #import "XLForm.h"
+#import "XLFormHeaderFooterView.h"
 
 
 @interface XLFormViewController()
@@ -402,6 +403,12 @@
     return nil;
 }
 
+- (void)sectionFooterPressed:(XLFormHeaderFooterView *)footerView {
+    if ([self respondsToSelector:@selector(didSelectFooterInSection:)]) {
+        [self didSelectFooterInSection:footerView.tag];
+    }
+}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -466,6 +473,19 @@
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     return [[self.form.formSections objectAtIndex:section] title];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    XLFormHeaderFooterView *view = [[XLFormHeaderFooterView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 100)];
+    view.tag = section;
+    
+    if ([[self.form.formSections objectAtIndex:section] footerURL] != nil) {
+        [view.button addTarget:self action:@selector(sectionFooterPressed:) forControlEvents:UIControlEventTouchUpInside];
+    }
+
+    view.textLabel.text = [tableView.dataSource tableView:tableView titleForFooterInSection:section];
+    
+    return view;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section

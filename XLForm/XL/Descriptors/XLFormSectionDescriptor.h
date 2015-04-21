@@ -33,6 +33,9 @@
 
 @property (nonatomic) NSString * title;
 @property (nonatomic) NSString * footerTitle;
+
+//Optional URL. If not nil, the footer will be selectable.
+@property (nonatomic) NSURL *footerURL;
 @property (readonly) NSMutableArray * formRows;
 @property BOOL isMultivaluedSection;
 @property (nonatomic) NSString * multiValuedTag;

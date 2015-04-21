@@ -277,22 +277,22 @@
     if (formRow.sectionDescriptor.isMultivaluedSection){
         return YES;
     }
-    return UITableViewRowAnimationFade;
+    return UITableViewRowAnimationNone;
 }
 
 -(UITableViewRowAnimation)deleteRowAnimationForRow:(XLFormRowDescriptor *)formRow
 {
-    return UITableViewRowAnimationFade;
+    return UITableViewRowAnimationNone;
 }
 
 -(UITableViewRowAnimation)insertRowAnimationForSection:(XLFormSectionDescriptor *)formSection
 {
-    return UITableViewRowAnimationAutomatic;
+    return UITableViewRowAnimationNone;
 }
 
 -(UITableViewRowAnimation)deleteRowAnimationForSection:(XLFormSectionDescriptor *)formSection
 {
-    return UITableViewRowAnimationAutomatic;
+    return UITableViewRowAnimationNone;
 }
 
 #pragma mark - Methods

@@ -49,7 +49,6 @@ typedef NS_ENUM(NSUInteger, XLFormPresentationMode) {
 @property NSString *title;
 @property (nonatomic) id value;
 @property Class valueTransformer;
-@property UITableViewCellStyle cellStype;
 @property (nonatomic) UIReturnKeyType returnKeyType;
 @property UITableViewCellStyle cellStyle;
 

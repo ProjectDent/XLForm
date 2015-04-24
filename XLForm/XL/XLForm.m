@@ -2,7 +2,7 @@
 //  XLForm.m
 //  XLForm ( https://github.com/xmartlabs/XLForm )
 //
-//  Copyright (c) 2014 Xmartlabs ( http://xmartlabs.com )
+//  Copyright (c) 2015 Xmartlabs ( http://xmartlabs.com )
 //
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -52,9 +52,11 @@ NSString *const XLFormRowDescriptorTypeDateInline = @"dateInline";
 NSString *const XLFormRowDescriptorTypeDateTimeInline = @"datetimeInline";
 NSString *const XLFormRowDescriptorTypeTimeInline = @"timeInline";
 NSString *const XLFormRowDescriptorTypeDateInlineConsistent = @"dateInlineConsistent";
+NSString *const XLFormRowDescriptorTypeCountDownTimerInline = @"countDownTimerInline";
 NSString *const XLFormRowDescriptorTypeDate = @"date";
 NSString *const XLFormRowDescriptorTypeDateTime = @"datetime";
 NSString *const XLFormRowDescriptorTypeTime = @"time";
+NSString *const XLFormRowDescriptorTypeCountDownTimer = @"countDownTimer";
 NSString *const XLFormRowDescriptorTypeDatePicker = @"datePicker";
 NSString *const XLFormRowDescriptorTypePicker = @"picker";
 NSString *const XLFormRowDescriptorTypeSlider = @"slider";
@@ -62,6 +64,5 @@ NSString *const XLFormRowDescriptorTypeBooleanCheck = @"booleanCheck";
 NSString *const XLFormRowDescriptorTypeBooleanSwitch = @"booleanSwitch";
 NSString *const XLFormRowDescriptorTypeButton = @"button";
 NSString *const XLFormRowDescriptorTypeInfo = @"info";
-NSString *const XLFormRowDescriptorTypeImage = @"image";
 NSString *const XLFormRowDescriptorTypeStepCounter = @"stepCounter";
 
